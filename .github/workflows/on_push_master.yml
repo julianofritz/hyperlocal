@@ -34,7 +34,5 @@ jobs:
       - name: Run PHPMD
         run: vendor/bin/phpmd ./app/Http/ github codesize,controversial,design,naming,unusedcode --exclude 'vendor/*
 
-
-
       - name: Run PHP Unit
         run: vendor/bin/phpunit
