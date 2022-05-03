@@ -16,6 +16,17 @@ jobs:
         with:
           php-version: '7.3'
 
+      - name: Shutdown Ubuntu MySQL (SUDO)
+        run: sudo service mysql stop
+
+      - name: Set up MySQL
+        uses: mirromutth/mysql-action@v1.1
+        with:
+          mysql version: '5.6'
+          mysql database: 'database'
+          mysql root password: root
+          mysql user: 'root'
+
       - name: Checkout project
         uses: actions/checkout@v2
 
@@ -39,6 +50,12 @@ jobs:
 
       - name: Generate Laravel key
         run: php artisan key:generate
+
+      - name: Install Laravel Migrate
+        run: php artisan migrate:install
+
+      - name: Run Laravel Migrate
+        run: php artisan migrate
 
       - name: Run PHP Unit
         run: vendor/bin/phpunit
