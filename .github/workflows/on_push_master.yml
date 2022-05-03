@@ -8,6 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-20.04
+    permissions: write-all
 
     steps:
       - name: Setup PHP with PECL extension
