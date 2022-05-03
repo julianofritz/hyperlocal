@@ -50,11 +50,11 @@ jobs:
       - name: Generate Laravel key
         run: php artisan key:generate
 
+      - name: Run PHP Unit
+        run: vendor/bin/phpunit
+
       - name: Install Laravel Migrate
         run: php artisan migrate:install
 
       - name: Run Laravel Migrate
         run: php artisan migrate
-
-      - name: Run PHP Unit
-        run: vendor/bin/phpunit
