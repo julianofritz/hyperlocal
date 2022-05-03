@@ -34,6 +34,9 @@ jobs:
       - name: Run PHPMD
         run: vendor/bin/phpmd ./app/Http/ github codesize,controversial,design,naming,unusedcode --exclude 'vendor/*'
 
+      - name: Rename .env.example
+        run: mv .env.example .env
+
       - name: Generate Laravel key
         run: php artisan key:generate
 
