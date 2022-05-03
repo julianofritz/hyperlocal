@@ -9,7 +9,7 @@ class FeesCalculateService
         if ($feeType === '%') {
             return (abs($productValue) * abs($feeAmount))/100;
         }
-
+            $e;
         return abs($feeAmount);
     }
 }
