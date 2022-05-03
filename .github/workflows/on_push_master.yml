@@ -1,0 +1,37 @@
+name: Simple Pipeline on push to master
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Setup PHP with PECL extension
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.3'
+
+      - name: Checkout project
+        uses: actions/checkout@v2
+
+      - name: Install composer
+        uses: php-actions/composer@v6
+
+      - name: Remove vendor
+        run: sudo rm -rf vendor
+
+      - name: Install project dependencies
+        run: sudo composer install
+
+      - name: Run PHP STAN
+        run: vendor/bin/phpstan analyse src/ tests/ --level 5
+
+      - name: Run PHPMD
+        run: vendor/bin/phpmd . github codesize,controversial,design,naming,unusedcode --exclude 'vendor/*'
+
+      - name: Run PHP Unit
+        run: vendor/bin/phpunit
