@@ -4,7 +4,7 @@ namespace App\Http\Services;
 
 class Foo
 {
-    public function foo1(int $number, int $limit): string
+    public function foo1(int $number, int $limit)
     {
         if ($number > $limit) {
             return "é maior que {$limit}";

@@ -40,6 +40,6 @@ class TabTest extends TestCase
 
         $this->expectException(ModelNotFoundException::class);
 
-        $result = $this->service->getTab(123);
+        $this->service->getTab(123);
     }
 }
