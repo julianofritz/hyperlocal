@@ -2,7 +2,7 @@
 vendor/bin/phpcs --standard=PSR2  app/Http/Services/
 
 #Run PHP STAN
-vendor/bin/phpstan analyse app/Http/Services/ tests/ --level 6
+vendor/bin/phpstan analyse app/Http/Services/ tests/ --level 3
 
 #Run PHPMD
 vendor/bin/phpmd app/Http/Services xml codesize,controversial,design,naming,unusedcode,cleancode --exclude 'vendor/*'
