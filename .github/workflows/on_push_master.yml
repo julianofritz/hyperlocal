@@ -39,10 +39,10 @@ jobs:
         run: sudo composer install
 
       - name: Run PHP STAN
-        run: vendor/bin/phpstan analyse app/Http/Helpers/ app/Http/Services/ tests/ --level 6
+        run: vendor/bin/phpstan analyse app/Http/Helpers/ app/Http/Services/ tests/ --level 1
 
       - name: Run PHPMD
-        run: vendor/bin/phpmd ./app/Http/ github codesize,controversial,design,naming,unusedcode,cleancode --exclude 'vendor/*'
+        run: vendor/bin/phpmd ./app/Http/ github unusedcode --exclude 'vendor/*'
 
       - name: Rename .env.example
         run: mv .env.example .env
