@@ -9,7 +9,8 @@ class TabRepository
         return [
             'id'            => 123,
             'client_name'   => 'Juliano Basso',
-            'value'         => 320
+            'value'         => 320,
+            'partner_id'    => 'abc123abc',
         ];
     }
 }

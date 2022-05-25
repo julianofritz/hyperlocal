@@ -1,3 +1,6 @@
+#Run PHP CS - styles: PSR2, PSR1, Squiz, PSR12, PEAR, Zend
+vendor/bin/phpcs --standard=PSR2  app/Http/Services/
+
 #Run PHP STAN
 vendor/bin/phpstan analyse app/Http/Services/ tests/ --level 6
 

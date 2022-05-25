@@ -8,7 +8,8 @@ class UserRepository
     {
         return [
             'id'    => 123,
-            'name' => 'Juliano Basso'
+            'name' => 'Juliano Basso',
+            'document' => 123456789,
         ];
     }
 }

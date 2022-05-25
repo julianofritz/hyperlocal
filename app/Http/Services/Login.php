@@ -15,6 +15,10 @@ class Login
         $this->userRepository = $userRepository;
     }
 
+    /**
+     * @param int $userId
+     * @return array<mixed>
+     */
     public function getUser(int $userId): array
     {
         try {
