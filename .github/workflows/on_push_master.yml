@@ -39,7 +39,7 @@ jobs:
         run: sudo composer install
 
       - name: Run PHP STAN
-        run: vendor/bin/phpstan analyse app/Http/Helpers/ app/Http/Services/ tests/ --level 1
+        run: vendor/bin/phpstan analyse app/Http/Helpers/ app/Http/Services/ --level 1
 
       - name: Run PHPMD
         run: vendor/bin/phpmd ./app/Http/ github unusedcode --exclude 'vendor/*'
